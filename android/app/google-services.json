@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "641380784252",
+    "firebase_url": "https://kramo-2863f.firebaseio.com",
+    "project_id": "kramo-2863f",
+    "storage_bucket": "kramo-2863f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:641380784252:android:028234df50657c2990d1f9",
+        "android_client_info": {
+          "package_name": "com.example.kramo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "641380784252-grh6qhshlem3d8dlulnlg3laf9h5n48n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMvad5sjxjiPNIAERjreHQ0VrQ6vl5ZCE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "641380784252-grh6qhshlem3d8dlulnlg3laf9h5n48n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

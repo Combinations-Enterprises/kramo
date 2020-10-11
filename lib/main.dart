@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:kramo/src/pages/login_page.dart';
 import 'package:kramo/src/pages/signup_page.dart';

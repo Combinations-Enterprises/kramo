@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kramo/src/pages/login_page.dart';
-import 'package:kramo/src/pages/signup_page.dart';
-import 'package:kramo/src/routes/routes.dart';
+import 'package:kramo/User/ui/screen/login_screen.dart';
+import 'package:kramo/routes/routes.dart';
 
 void main() {
   	runApp(MyApp());
@@ -20,7 +19,8 @@ class MyApp extends StatelessWidget {
 				visualDensity: VisualDensity.adaptivePlatformDensity,
 				
       		),
-      		home: MyHomePage(title: 'Kramo'),
+      		//home: MyHomePage(title: 'Kramo'),
+			home: LoginScreen(),
     	);
   	}
 }
@@ -39,46 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
   	Widget build(BuildContext context) {
     	return Scaffold(
       		appBar: AppBar(title: Text(widget.title),),
-      		body: Center(	
-        		child: Column(
-          			mainAxisAlignment: MainAxisAlignment.center,
-          			children: <Widget>[
-						//_textFromFirebase(),
-						RaisedButton(
-							child: Text('Iniciar sesión'),
-							onPressed: (){
-								Navigator.pushNamed(context, LoginPage.routeName);
-							},
-						),
-						RaisedButton(
-							child: Text('Crear cuenta'),
-							onPressed: (){
-								Navigator.pushNamed(context, SignupPage.routeName);
-							},
-						),
-            			
-          			],
-        		),
-      		),
+      		body: Container()
     	);
   	}
-	
-	/*Widget _textFromFirebase() {
-		return StreamBuilder(
-			stream: Firestore.instance.collection('kramodev').document('quick').snapshots(),
-			builder: (context, snapshot){
-				if (snapshot.hasData){
-					var doc = snapshot.data;
-					if(doc.exists){
-						return Text(doc['content']);
-					} else{
-						return Text('Error');
-					}
-				}
-				return Center(
-					child: CircularProgressIndicator(),
-				);
-			},
-		);
-	}*/
 }

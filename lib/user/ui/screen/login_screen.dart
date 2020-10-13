@@ -42,7 +42,11 @@ class _LoginScreenState extends State<LoginScreen> {
 					child: Text('Login with Gmail'),
 					onPressed: (){
 						userBloc.signIn().then(
-							(firebase_auth.User user) => print("El usuario es ${user.displayName}"))
+							(firebase_auth.User user) {
+								print("-----------------------");
+								print("El usuario es ${user.displayName}");
+								print("-----------------------");
+							})
 						;
 					},
 				),

@@ -12,13 +12,25 @@ class FirebaseAuthAPI {
 
 
 	Future<firebase_auth.User> signIn() async {
-		GoogleSignInAccount googleSignInAccount = await googleSignIn.signIn();
-		GoogleSignInAuthentication googleSA = await googleSignInAccount.authentication;
+		try{
+			GoogleSignInAccount googleSignInAccount = await googleSignIn.signIn();
+			GoogleSignInAuthentication googleSA = await googleSignInAccount.authentication;
 
-		firebase_auth.UserCredential user = await _auth.signInWithCredential(
-			firebase_auth.GoogleAuthProvider.credential(idToken: googleSA.idToken, accessToken: googleSA.accessToken)
-		);
-	
-		return user.user;	
+			firebase_auth.UserCredential user = await _auth.signInWithCredential(
+				firebase_auth.GoogleAuthProvider.credential(idToken: googleSA.idToken, accessToken: googleSA.accessToken)
+			);
+		
+			return user.user;	
+		} catch(exception){
+			print(exception);
+			return null;
+		}
+	}
+
+
+	void signOut() async {
+		await _auth.signOut().then((onValue) => print("Close sesion"));
+		googleSignIn.signOut();
+
 	}
 }

@@ -21,16 +21,14 @@ class FirebaseAuthAPI {
 			);
 		
 			return user.user;	
-		} catch(exception){
-			print(exception);
+		} catch(exception) {
 			return null;
 		}
 	}
 
 
 	void signOut() async {
-		await auth.signOut().then((onValue) => print("Close sesion"));
+		await auth.signOut();
 		googleSignIn.signOut();
-
 	}
 }

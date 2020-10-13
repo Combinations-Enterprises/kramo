@@ -6,7 +6,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 class FirebaseAuthAPI {
 
 
-	final firebase_auth.FirebaseAuth _auth = firebase_auth.FirebaseAuth.instance;
+	final firebase_auth.FirebaseAuth auth = firebase_auth.FirebaseAuth.instance;
 
     final GoogleSignIn googleSignIn = GoogleSignIn();
 
@@ -16,7 +16,7 @@ class FirebaseAuthAPI {
 			GoogleSignInAccount googleSignInAccount = await googleSignIn.signIn();
 			GoogleSignInAuthentication googleSA = await googleSignInAccount.authentication;
 
-			firebase_auth.UserCredential user = await _auth.signInWithCredential(
+			firebase_auth.UserCredential user = await auth.signInWithCredential(
 				firebase_auth.GoogleAuthProvider.credential(idToken: googleSA.idToken, accessToken: googleSA.accessToken)
 			);
 		
@@ -29,7 +29,7 @@ class FirebaseAuthAPI {
 
 
 	void signOut() async {
-		await _auth.signOut().then((onValue) => print("Close sesion"));
+		await auth.signOut().then((onValue) => print("Close sesion"));
 		googleSignIn.signOut();
 
 	}

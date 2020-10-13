@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "641380784252-m1q9khvsmubqf48d2jccg8rjlmsg4e88.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kramo",
+            "certificate_hash": "c65eb3112c04373c61ba3196560516e1dac00705"
+          }
+        },
+        {
           "client_id": "641380784252-grh6qhshlem3d8dlulnlg3laf9h5n48n.apps.googleusercontent.com",
           "client_type": 3
         }

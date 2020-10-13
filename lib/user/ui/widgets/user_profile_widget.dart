@@ -7,17 +7,11 @@ class UserProfileWidget extends StatelessWidget {
   	@override
   	Widget build(BuildContext context) {
 		return Column(
-			crossAxisAlignment: CrossAxisAlignment.center,
 			children: [
 				Container(
 					height: 90.0,
 					width: 90.0,
 					decoration: BoxDecoration(
-						border: Border.all(
-							color: Colors.white,
-							width: 2,
-							style: BorderStyle.solid
-						),
 						shape: BoxShape.circle,
 						image: DecorationImage(
 							fit: BoxFit.cover,
@@ -30,7 +24,4 @@ class UserProfileWidget extends StatelessWidget {
 			],
 		);
   	}
-
-
-	
 }

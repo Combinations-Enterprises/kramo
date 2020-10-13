@@ -5,6 +5,8 @@ import 'package:kramo/User/ui/screen/login_screen.dart';
 import 'package:kramo/routes/routes.dart';
 import 'package:kramo/user/bloc/user_bloc.dart';
 
+import 'main_screen.dart';
+
 
 void main() async {
 	WidgetsFlutterBinding.ensureInitialized();
@@ -15,8 +17,6 @@ void main() async {
 
 
 class MyApp extends StatelessWidget {
-  	// This widget is the root of your application.
-
 	@override
 	Widget build(BuildContext context) {
 		return BlocProvider(
@@ -24,9 +24,26 @@ class MyApp extends StatelessWidget {
 				routes: ApplicationRoutes.getApplicationRoutes(),
 				debugShowCheckedModeBanner: false,
           		title: 'Flutter Demo',
-          		home: LoginScreen(),
+          		home: _handleCurrentSession(context),
         	),
 			bloc: UserBloc()
+		);
+	}
+
+
+
+
+	Widget _handleCurrentSession(BuildContext context){
+		UserBloc userBloc = UserBloc();
+		return StreamBuilder(
+			stream: userBloc.streamAuthStatus,
+			builder: (BuildContext context, AsyncSnapshot snapshot){
+				if (!snapshot.hasData || snapshot.hasError){
+					return LoginScreen();
+				} else {
+					return MainScreen();
+				}
+			},
 		);
 	}
 }

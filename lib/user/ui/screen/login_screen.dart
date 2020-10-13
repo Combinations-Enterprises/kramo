@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:generic_bloc_provider/generic_bloc_provider.dart';
-import 'package:kramo/main_screen.dart';
-import 'package:kramo/user/bloc/user_bloc.dart';
 import 'package:kramo/user/ui/widgets/button_firebase_signin_widget.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -12,38 +9,17 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
 
-	UserBloc userBloc;
-
   	@override
   	Widget build(BuildContext context) {
-		userBloc = BlocProvider.of(context);
-    	return _handleCurrentSession();
-  	}
-
-	Widget _handleCurrentSession(){
-		return StreamBuilder(
-			stream: userBloc.streamAuthStatus,
-			builder: (BuildContext context, AsyncSnapshot snapshot){
-				if (!snapshot.hasData || snapshot.hasError){
-					return _loginGoogleUI();
-				} else {
-					return MainScreen();
-				}
-			},
-		);
-	}
-
-
-	Widget _loginGoogleUI(){
-		return Scaffold(
+    	return Scaffold(
 			body: Column(
 				mainAxisAlignment: MainAxisAlignment.center,	
 				children: [
 					Text('You are logged out', style: TextStyle(fontSize: 20.0),),
 					SizedBox(height: 20.0,),
-					ButtonFirebaseSignInWidget(userBloc: userBloc)
+					ButtonFirebaseSignInWidget()
 				],
 			)
 		);
-	}
+  	}
 }

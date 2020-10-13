@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:kramo/user/bloc/user_bloc.dart';
 
 class ButtonFirebaseSignOutWidget extends StatelessWidget {
-	final UserBloc userBloc;
-  	const ButtonFirebaseSignOutWidget({Key key, @required this.userBloc}) : super(key: key);
+	
+  	const ButtonFirebaseSignOutWidget({Key key}) : super(key: key);
 
   	@override
   	Widget build(BuildContext context) {
+		UserBloc userBloc = BlocProvider.of<UserBloc>(context);
 		return Container(
 			padding: EdgeInsets.all(50),
 			child: Center(
@@ -26,7 +28,7 @@ class ButtonFirebaseSignOutWidget extends StatelessWidget {
 						)
 					),
 					onPressed: () {
-						this.userBloc.signut();
+						userBloc.signut();
 					},	  
 				),
 			)

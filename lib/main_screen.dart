@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:kramo/user/bloc/user_bloc.dart';
 import 'package:kramo/user/ui/widgets/button_firebase_signout_widget.dart';
 import 'package:kramo/user/ui/widgets/user_profile_widget.dart';
@@ -14,7 +13,6 @@ class _MainScreenState extends State<MainScreen> {
 	UserBloc userBloc;
   	@override
   	Widget build(BuildContext context) {
-		userBloc = BlocProvider.of<UserBloc>(context);
 		return Scaffold(
 			body: Column(
 				crossAxisAlignment: CrossAxisAlignment.center,
@@ -24,7 +22,7 @@ class _MainScreenState extends State<MainScreen> {
 					SizedBox(height: 20.0,),
 					UserProfileWidget(),
 					SizedBox(height: 50,),
-					ButtonFirebaseSignOutWidget(userBloc: userBloc)
+					ButtonFirebaseSignOutWidget()
 			  	],
 			),
 		);

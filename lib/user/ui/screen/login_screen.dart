@@ -36,20 +36,39 @@ class _LoginScreenState extends State<LoginScreen> {
 
 
 	Widget _loginGoogleUI(){
+
 		return Scaffold(
 			body: Center(
-				child: RaisedButton(
-					child: Text('Login with Gmail'),
-					onPressed: (){
-						userBloc.signIn().then(
-							(firebase_auth.User user) {
-								print("-----------------------");
-								print("El usuario es ${user.displayName}");
-								print("-----------------------");
-							})
-						;
-					},
-				),
+				child: Container(
+         			padding: EdgeInsets.all(50),
+					child: Center(
+					  	child: FlatButton(
+							shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+							color: Colors.blueAccent,
+							child: Padding(
+								padding: EdgeInsets.all(10),
+								child: Row(
+									mainAxisAlignment: MainAxisAlignment.center,
+									crossAxisAlignment: CrossAxisAlignment.center,
+									children: <Widget>[
+										Icon(Icons.account_circle, color: Colors.white),
+										SizedBox(width: 10),
+										Text('Login with Google', style: TextStyle(color: Colors.white))
+									],
+								)
+							),
+							onPressed: () {
+								userBloc.signIn().then(
+									(firebase_auth.User user) {
+										print("-----------------------");
+										print("El usuario es ${user.displayName}");
+										print("-----------------------");
+									}
+								);
+               				},	  
+            			),
+					)
+       			),
 			),
 		);
 	}

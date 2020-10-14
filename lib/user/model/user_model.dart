@@ -5,7 +5,7 @@ class User {
 	final String name;
 	final String email;
 	final String photoUrl;
-	
+	final List<Match> matches;
 
 	User({
 		Key key,
@@ -13,6 +13,6 @@ class User {
 		@required this.name,
 		@required this.email,
 		@required this.photoUrl,
-	
+		this.matches
 	});
 }

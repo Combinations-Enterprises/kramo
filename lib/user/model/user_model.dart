@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class User {
-	final String uid;
-	final String name;
-	final String email;
-	final String photoUrl;
-	final List<Match> matches;
+class UserModel {
+	String id;
+	String name;
+	String email;
+	String photoUrl;
+	List<Match> matches;
 
-	User({
+	UserModel({
 		Key key,
-		@required this.uid,
+		@required this.id,
 		@required this.name,
 		@required this.email,
 		@required this.photoUrl,

@@ -5,6 +5,7 @@ class UserModel {
 	String name;
 	String email;
 	String photoUrl;
+  	String userName;
 	List<Match> matches;
 
 	UserModel({
@@ -13,6 +14,7 @@ class UserModel {
 		@required this.name,
 		@required this.email,
 		@required this.photoUrl,
+		this.userName,
 		this.matches
 	});
 }

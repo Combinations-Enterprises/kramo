@@ -1,6 +1,6 @@
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:kramo/match/model/match_model.dart';
-import 'package:kramo/user/repository/cloud_firestore_repository.dart';
+import 'package:kramo/cloud_firestore/cloud_firestore_repository.dart';
 
 class MatchBloc implements Bloc {
   	

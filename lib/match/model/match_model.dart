@@ -7,10 +7,9 @@ class MatchModel {
 	UserModel player1;
 	UserModel player2;
 
-
 	MatchModel({
 		Key key, 
-		@required this.id,
+		this.id,
 		this.name,
 		this.player1,
 		this.player2

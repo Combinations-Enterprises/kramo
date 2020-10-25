@@ -1,6 +1,6 @@
 import 'package:kramo/match/model/match_model.dart';
 import 'package:kramo/user/model/user_model.dart';
-import 'package:kramo/user/repository/cloud_firestore_api.dart';
+import 'package:kramo/cloud_firestore/cloud_firestore_api.dart';
 
 class CloudFirestoreRepository{
 	final CloudFirestoreApi _cloudFirestoreApi = CloudFirestoreApi();
@@ -9,5 +9,5 @@ class CloudFirestoreRepository{
 	void updateUserData(UserModel user) => _cloudFirestoreApi.updateUserData(user);
 
 	// Matches
-  	void createMatch(MatchModel match) => _cloudFirestoreApi.createMatch(match);
+  void createMatch(MatchModel match) => _cloudFirestoreApi.createMatch(match);
 }

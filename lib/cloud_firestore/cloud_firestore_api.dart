@@ -34,7 +34,5 @@ class CloudFirestoreApi {
 			"name": "Nueva partida",
 			"player1": _firestore.collection(collectionUsers).doc(firebase_auth.FirebaseAuth.instance.currentUser.uid),
 		});
-
-		
 	}
 }
